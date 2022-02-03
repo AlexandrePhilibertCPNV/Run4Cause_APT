@@ -1,0 +1,24 @@
+{
+  "name": "run4cause",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css:build": "npx tailwind build ./wwwroot/css/site.css -o ./wwwroot/css/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandrePhilibertCPNV/Run4Cause_APT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandrePhilibertCPNV/Run4Cause_APT/issues"
+  },
+  "homepage": "https://github.com/AlexandrePhilibertCPNV/Run4Cause_APT#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.18"
+  }
+}

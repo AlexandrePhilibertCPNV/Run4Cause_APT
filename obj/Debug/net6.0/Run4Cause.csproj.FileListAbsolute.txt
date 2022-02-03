@@ -24,3 +24,5 @@
 /home/alexandre/Documents/cpnv/ASP1/Run4Cause/obj/Debug/net6.0/ref/Run4Cause.dll
 /home/alexandre/Documents/cpnv/ASP1/Run4Cause/obj/Debug/net6.0/Run4Cause.pdb
 /home/alexandre/Documents/cpnv/ASP1/Run4Cause/obj/Debug/net6.0/Run4Cause.genruntimeconfig.cache
+/home/alexandre/Documents/cpnv/ASP1/Run4Cause/bin/Debug/net6.0/package-lock.json
+/home/alexandre/Documents/cpnv/ASP1/Run4Cause/bin/Debug/net6.0/package.json
