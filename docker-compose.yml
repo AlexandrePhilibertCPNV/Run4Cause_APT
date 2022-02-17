@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_USER=run4cause
+      - POSTGRES_PASSWORD=run4cause
+      - POSTGRES_DB=run4cause
+    ports:
+      - "5432:5432"
