@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Run4Cause.Data;
@@ -12,9 +13,10 @@ using Run4Cause.Data;
 namespace Run4Cause.Migrations
 {
     [DbContext(typeof(Run4CauseContext))]
-    partial class Run4CauseContextModelSnapshot : ModelSnapshot
+    [Migration("20220303151726_UserProfile")]
+    partial class UserProfile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
