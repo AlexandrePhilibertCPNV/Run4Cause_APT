@@ -13,6 +13,7 @@ builder.Services.AddDbContext<Run4CauseContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -46,5 +47,7 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Profile}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();
