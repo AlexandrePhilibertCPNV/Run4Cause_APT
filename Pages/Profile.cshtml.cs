@@ -1,11 +1,5 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Run4Cause.Models;
-using Microsoft.Extensions.Logging;
-using System;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +7,6 @@ namespace Run4Cause.Pages
 {
     public class ProfileModel : PageModel
     {
-
         private readonly Run4Cause.Data.Run4CauseContext _context;
 
         public ProfileModel(Run4Cause.Data.Run4CauseContext context)
@@ -21,14 +14,21 @@ namespace Run4Cause.Pages
             _context = context;
         }
 
-        public User User { get; set; }
+        public User? User { get; set; }
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int userId)
         {
-            // get the user with id 1
             User = await _context.Users.Include(u => u.Profile)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(u => u.Id == 1);
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            /**
+             * The user needs to have a profile in order to display the page.
+             */
+            if (User == null || User.Profile == null)
+            {
+                return NotFound();
+            }
 
             return Page();
         }
