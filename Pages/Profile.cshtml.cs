@@ -26,7 +26,9 @@ namespace Run4Cause.Pages
         public async Task<IActionResult> OnGetAsync()
         {
             // get the user with id 1
-            User = await _context.Users.FirstOrDefaultAsync(u => u.Id == 1);
+            User = await _context.Users.Include(u => u.Profile)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Id == 1);
 
             return Page();
         }

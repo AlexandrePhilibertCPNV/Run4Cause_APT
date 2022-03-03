@@ -7,8 +7,7 @@
         <div class="flex flex-shrink-0 w-24 h-24 bg-gray-300 rounded-full"></div>
         <div class="w-2/3 space-y-4">
             <h1 class="mr-4 text-2xl font-bold">@Html.DisplayFor(model => model.User.FullName)</h1>
-            <p class="mr-4 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae illum amet quasi
-                provident eligendi!</p>
+            <p class="mr-4 text-justify">@Html.DisplayFor(model => model.User.Profile.Description)</p>
         </div>
     </div>
     <hr>
@@ -17,7 +16,7 @@
             <div class="flex flex-col justify-between py-1.5 px-2 bg-green-200 rounded-lg">
                 <div class="text-green-900">Distance totale</div>
                 <div class="flex text-green-600">
-                    <span class="font-bold">45.6</span>
+                    <span class="font-bold">@Html.DisplayFor(model => model.User.TotalDistanceCovered)</span>
                     <span>km</span>
                 </div>
             </div>

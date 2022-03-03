@@ -8,6 +8,7 @@ namespace Run4Cause.Data
         public Run4CauseContext(DbContextOptions<Run4CauseContext> options) : base(options) { }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<Run> Runs { get; set; }
         public virtual DbSet<Edition> Editions { get; set; }
         public virtual DbSet<Waypoint> Waypoints { get; set; }
