@@ -20,5 +20,8 @@
   "homepage": "https://github.com/AlexandrePhilibertCPNV/Run4Cause_APT#readme",
   "devDependencies": {
     "tailwindcss": "^3.0.18"
+  },
+  "dependencies": {
+    "alpinejs": "^3.9.1"
   }
 }
