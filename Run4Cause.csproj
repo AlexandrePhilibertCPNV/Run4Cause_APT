@@ -26,4 +26,8 @@
     <Exec Command="npm run css:build" />
   </Target>
 
+  <Target Name="CopyNodeModules" BeforeTargets="Build">
+    <Copy SourceFiles="node_modules/alpinejs/dist/cdn.min.js" DestinationFiles="wwwroot/js/alpinejs.min.js" />
+  </Target>
+
 </Project>
