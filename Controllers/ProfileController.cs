@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace run4cause.Controllers;
+namespace Run4Cause.Controllers;
 
 public class ProfileController : Controller
 {

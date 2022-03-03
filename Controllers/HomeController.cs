@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using run4cause.Models;
+using Run4Cause.Models;
 
-namespace run4cause.Controllers;
+namespace Run4Cause.Controllers;
 
 public class HomeController : Controller
 {

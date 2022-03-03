@@ -1,4 +1,4 @@
-namespace run4cause.Models;
+namespace Run4Cause.Models;
 
 public class ErrorViewModel
 {
