@@ -24,6 +24,11 @@ namespace Run4Cause.Models
 
         public List<Tracking>? Trackings { get; set; }
 
+        public List<Trophy>? Trophies { get; set; }
+
+        public int? ProfileId { get; set; }
+        public virtual Profile? Profile { get; set; }
+
         public string FullName => $"{FirstName} {LastName}";
     }
 }
