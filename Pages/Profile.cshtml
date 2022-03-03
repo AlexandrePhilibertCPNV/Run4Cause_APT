@@ -1,0 +1,94 @@
+@page
+@using Run4Cause.Pages
+@model ProfileModel
+
+<div class="flex flex-col px-6 py-4 space-y-4">
+    <div class="flex items-center space-x-4">
+        <div class="flex flex-shrink-0 w-24 h-24 bg-gray-300 rounded-full"></div>
+        <div class="w-2/3 space-y-4">
+            <h1 class="mr-4 text-2xl font-bold">@Html.DisplayFor(model => model.User.FullName)</h1>
+            <p class="mr-4 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae illum amet quasi
+                provident eligendi!</p>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <div class="flex space-x-2">
+            <div class="flex flex-col justify-between py-1.5 px-2 bg-green-200 rounded-lg">
+                <div class="text-green-900">Distance totale</div>
+                <div class="flex text-green-600">
+                    <span class="font-bold">45.6</span>
+                    <span>km</span>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between py-1.5 px-2 bg-green-200 rounded-lg">
+                <div class="text-green-900">Gains</div>
+                <div class="flex text-green-600">
+                    <span class="font-bold">4'345</span>
+                    <span>CHF</span>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between py-1.5 px-2 bg-green-200 rounded-lg">
+                <div class="text-green-900">Parrains</div>
+                <div class="flex text-green-600">
+                    <span class="font-bold">54</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-y-4">
+        <h1 class="text-2xl font-bold">Prochaine participation</h1>
+        <div class="flex items-center space-x-5 md:items-start">
+            <div class="w-2/5 space-y-2.5">
+                <div class="flex items-center space-x-3">
+                    <img src="/img/icon_markers.png" alt="" class="w-8 h-8">
+                    <div>12 km</div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <img src="/img/icon_mountains.png" alt="" class="w-8 h-8">
+                    <div>120 m</div>
+                </div>
+                <hr>
+                <div class="flex items-center space-x-3">
+                    <img src="/img/icon_calendar.png" alt="" class="w-8 h-8">
+                    <div>Le 15 juin</div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <img src="/img/icon_clock.png" alt="" class="w-8 h-8">
+                    <div>Départ à 10h00</div>
+                </div>
+            </div>
+            <div class="flex-1 w-3/5">
+                <img src="/img/map.png" alt="" class="w-full rounded-3xl">
+            </div>
+        </div>
+    </div>
+
+    <div class="space-y-4">
+        <h1 class="text-2xl font-bold">Trophées</h1>
+        <div class="flex space-x-4">
+            <div class="flex flex-col items-center space-y-4">
+                <img src="/img/trophy_1.png" alt="" class="w-16 h-16">
+                <div>Participant 2018</div>
+            </div>
+            <div class="flex flex-col items-center space-y-4">
+                <img src="/img/trophy_2.png" alt="" class="w-16 h-16">
+                <div>Participant 2019</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col space-y-4">
+        <h1 class="text-2xl font-bold">Photos</h1>
+        <div class="flex flex-1">
+            <img src="/img/gallery_1.png" alt="" class="w-full rounded-3xl">
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 pb-4 -translate-x-1/2 left-1/2 md:hidden">
+        <button class="px-8 py-3 text-white bg-green-500 rounded-full">
+            <span>Parrainer</span>
+        </button>
+    </div>
+</div>
