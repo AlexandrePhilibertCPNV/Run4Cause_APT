@@ -23,5 +23,7 @@ namespace Run4Cause.Models
         public List<Entry>? Entries { get; set; }
 
         public List<Tracking>? Trackings { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";
     }
 }
