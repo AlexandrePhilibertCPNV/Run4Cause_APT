@@ -16,5 +16,27 @@ namespace Run4Cause.Data
         public virtual DbSet<Tracking> Trackings { get; set; }
         public virtual DbSet<RunWaypoint> RunWaypoints { get; set; }
         public virtual DbSet<Entry> Entries { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>().HasData(new User
+            {
+                Id = 1,
+                FirstName = "Alexandre",
+                LastName = "Philibert",
+                Email = "alexandre.philibert@cpnv.ch",
+                PhoneNumber = "0781234567",
+                TotalDistanceCovered = 12.4f,
+            });
+
+            modelBuilder.Entity<Profile>().HasData(new Profile
+            {
+                Id = 1,
+                Description = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, vero!",
+                UserId = 1,
+            });
+        }
     }
 }
