@@ -104,14 +104,14 @@
                 <h1 class="mb-4 text-2xl font-bold">Modifier le profil</h1>
 
                 <label class="text-lg" for="FirstName">Prénom</label>
-                <input id="FirstName" name="FirstName" asp-for="User.FirstName" class="p-2 border rounded-md" />
+                <input id="FirstName" name="FirstName" asp-for="User.FirstName" class="p-2 border rounded-md" required />
 
                 <label class="text-lg" for="LastName">Nom</label>
-                <input id="LastName" name="LastName" asp-for="User.LastName" class="p-2 border rounded-md" />
+                <input id="LastName" name="LastName" asp-for="User.LastName" class="p-2 border rounded-md" required />
 
                 <label class="text-lg" for="Description">Description</label>
                 <textarea id="Description" name="Description" asp-for="User.Profile.Description" cols="30" rows="5"
-                    class="p-2 border rounded-md"></textarea>
+                    class="p-2 border rounded-md" required></textarea>
 
                 <div class="flex justify-end pt-4 space-x-4">
                     <button class="px-4 py-2 text-gray-600 bg-gray-200 border rounded-md">Annuler</button>
