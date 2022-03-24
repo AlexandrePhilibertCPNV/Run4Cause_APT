@@ -1,11 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace Run4Cause.Models
 {
-    public class User
+    public class User : IdentityUser<int>
     {
-        public int Id { get; set; }
-
         [Required]
         public string FirstName { get; set; }
 
@@ -14,9 +13,6 @@ namespace Run4Cause.Models
 
         [MaxLength(16)]
         public string? PhoneNumber { get; set; }
-
-        [Required, EmailAddress]
-        public string Email { get; set; }
 
         public float TotalDistanceCovered { get; set; }
 

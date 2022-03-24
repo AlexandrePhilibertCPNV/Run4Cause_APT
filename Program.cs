@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Run4Cause.Data;
+using Run4Cause.Models;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,11 @@ builder.Services.AddDbContext<Run4CauseContext>(options =>
         .UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
         .UseSnakeCaseNamingConvention();
 });
+
+builder.Services
+    .AddDefaultIdentity<User>()
+    .AddSignInManager<SignInManager<User>>()
+    .AddEntityFrameworkStores<Run4CauseContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -37,7 +44,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
