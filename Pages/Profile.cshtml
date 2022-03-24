@@ -8,7 +8,14 @@
         <div class="w-2/3 space-y-4">
             <div class="flex items-center">
                 <h1 class="mr-4 text-2xl font-bold">@Html.DisplayFor(model => model.User.FullName)</h1>
-                @await Component.InvokeAsync("UpdateProfileModal", new { User = Model.User })
+                @{
+                    // TODO: We should compare the phone number as the email
+                    // cloud be null
+                    if (Model.User.Email == User?.Identity.Name)
+                    {
+                        @await Component.InvokeAsync("UpdateProfileModal", new { User = Model.User })
+                    }
+                }
             </div>
             <p class="mr-4 text-justify">@Html.DisplayFor(model => model.User.Profile.Description)</p>
         </div>
