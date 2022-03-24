@@ -11,7 +11,7 @@
                 @{
                     // TODO: We should compare the phone number as the email
                     // cloud be null
-                    if (Model.User.Email == User?.Identity.Name)
+                    if (Model.User.Email == User?.Identity?.Name)
                     {
                         @await Component.InvokeAsync("UpdateProfileModal", new { User = Model.User })
                     }
