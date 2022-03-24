@@ -1,0 +1,90 @@
+@model Run4Cause.Models.User
+
+<div x-data="{ open: false }">
+    <div class="fixed bottom-0 z-10 pb-4 -translate-x-1/2 left-1/2 md:hidden">
+        <button class="px-8 py-3 text-white bg-green-500 rounded-full" @@click="open = true">
+            <span>Parrainer</span>
+        </button>
+    </div>
+    <div class="z-10" x-show="open" x-cloak x-data="state()">
+        <div class="fixed top-0 left-0 w-full h-full bg-black opacity-40" @@click="open = false"></div>
+        <div class="fixed w-full -translate-x-1/2 bottom-16 left-1/2">
+            <form class="relative flex flex-col px-8 py-6 m-8 space-y-2 bg-white rounded-lg" method="POST">
+                <h1 class="mb-4 text-2xl font-bold">Parrainer @Html.DisplayFor(model => model.FullName)</h1>
+
+                <label class="text-lg font-bold" for="AmountPerKm">Contribution au km</label>
+                <div class="flex space-x-2" x-data="amountRadios(amounts)">
+                    @{
+                        for (int i = 0; i < 4; i++)
+                        {
+                            <label :for="radios[@i].id" class="overflow-hidden text-green-600 bg-green-200 rounded-md w-min"
+                            :class="radios[@i].value == amount && customAmount == '' && 'bg-green-400 text-white'">
+                                <input type="radio" :id="radios[@i].id" name="AmountPerKm" :value="radios[@i].value"
+                                class="hidden" x-model="amount" @@change="customAmount = ''" />
+                                <div class="flex items-center p-2 space-x-1.5 pointer-events-none">
+                                    <span class="font-bold 0" x-text="radios[@i].value"></span>
+                                    <span>CHF</span>
+                                </div>
+                            </label>
+                        }
+                    }
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <label class="text-lg font-bold" for="CustomAmoutPerKm">Montant personalisé</label>
+                    <div class="flex items-center flex-1 flex-grow-0 w-20 bg-green-200 rounded-md">
+                        <input id="CustomAmoutPerKm" name="CustomAmoutPerKm" type="number" min="1" max="99"
+                            class="w-10 p-2 font-bold text-green-600 bg-transparent outline-none"
+                            x-model="customAmount" />
+                        <span class="mr-2 text-green-600">CHF</span>
+                    </div>
+                </div>
+
+                <label class="text-lg font-bold" for="FirstName">Prénom</label>
+                <input id="FirstName" name="FirstName" class="p-2 border rounded-md" required />
+
+                <label class="text-lg font-bold" for="LastName">Nom</label>
+                <input id="LastName" name="LastName" class="p-2 border rounded-md" required />
+
+                <label class="text-lg font-bold" for="PhoneNumber">Numéro de téléphone</label>
+                <input id="PhoneNumber" name="PhoneNumber" class="p-2 border rounded-md" required />
+
+                <div class="flex justify-end pt-4">
+                    <button class="px-8 py-3 font-bold text-white bg-green-500 rounded-full ">Valider</button>
+                </div>
+
+                <button class="absolute top-2 right-4" type="button" @@click="open = false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div class="absolute w-6 h-6 rotate-45 -translate-x-1/2 bg-white rounded-md -bottom-2 left-1/2">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const amounts = [
+        { id: "2", value: 2 },
+        { id: "5", value: 5 },
+        { id: "10", value: 10 },
+        { id: "20", value: 20 }
+    ];
+
+    function state() {
+        return {
+            amount: 5,
+            customAmount: "",
+        }
+    }
+
+    function amountRadios(radios) {
+        return {
+            radios,
+        }
+    }
+</script>
