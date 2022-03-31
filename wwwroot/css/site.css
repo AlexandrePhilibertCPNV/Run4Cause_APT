@@ -34,3 +34,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@layer components {
+  .input {
+    @apply px-2.5 py-1.5 border rounded-md outline-none focus:border-gray-300;
+  }
+}
