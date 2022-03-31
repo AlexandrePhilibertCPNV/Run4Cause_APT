@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "css:watch": "npx tailwind build -i ./wwwroot/css/site.css -o ./wwwroot/css/output.css --watch",
     "css:build": "npx tailwind build -i ./wwwroot/css/site.css -o ./wwwroot/css/output.css"
   },
   "repository": {
