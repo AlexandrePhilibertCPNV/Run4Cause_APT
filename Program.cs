@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Run4Cause.Data;
 using Run4Cause.Models;
 using Microsoft.AspNetCore.Identity;
+using Tailwind;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,10 @@ if (!app.Environment.IsDevelopment())
     // app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+}
+else
+{
+    app.RunTailwind("css:watch", "./");
 }
 
 // Check if the database is created. If not, create it.
