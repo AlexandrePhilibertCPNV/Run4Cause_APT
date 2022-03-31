@@ -40,14 +40,17 @@
                     </div>
                 </div>
 
-                <label class="text-lg font-bold" for="FirstName">Prénom</label>
-                <input id="FirstName" name="FirstName" class="p-2 border rounded-md" required />
+                @if (!(User?.Identity?.IsAuthenticated ?? false))
+                {
+                    <label class="text-lg font-bold" for="FirstName">Prénom</label>
+                    <input id="FirstName" name="FirstName" class="p-2 border rounded-md" required />
 
-                <label class="text-lg font-bold" for="LastName">Nom</label>
-                <input id="LastName" name="LastName" class="p-2 border rounded-md" required />
+                    <label class="text-lg font-bold" for="LastName">Nom</label>
+                    <input id="LastName" name="LastName" class="p-2 border rounded-md" required />
 
-                <label class="text-lg font-bold" for="PhoneNumber">Numéro de téléphone</label>
-                <input id="PhoneNumber" name="PhoneNumber" class="p-2 border rounded-md" required />
+                    <label class="text-lg font-bold" for="PhoneNumber">Numéro de téléphone</label>
+                    <input id="PhoneNumber" name="PhoneNumber" class="p-2 border rounded-md" required />
+                }
 
                 <div class="flex justify-end pt-4">
                     <button class="px-8 py-3 font-bold text-white bg-green-500 rounded-full ">Valider</button>
