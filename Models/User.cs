@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace Run4Cause.Models
@@ -14,7 +15,8 @@ namespace Run4Cause.Models
         [MaxLength(16)]
         public string? PhoneNumber { get; set; }
 
-        public float TotalDistanceCovered { get; set; }
+        [Column(TypeName = "decimal(20,2)")]
+        public decimal? TotalDistanceCovered { get; set; }
 
         public List<Entry>? Entries { get; set; }
 

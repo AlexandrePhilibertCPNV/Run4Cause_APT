@@ -32,7 +32,7 @@ namespace Run4Cause.Data
                 LastName = "Philibert",
                 Email = "alexandre.philibert@cpnv.ch",
                 PhoneNumber = "0781234567",
-                TotalDistanceCovered = 12.4f,
+                TotalDistanceCovered = 12.4m
             });
 
             modelBuilder.Entity<Profile>().HasData(new Profile
