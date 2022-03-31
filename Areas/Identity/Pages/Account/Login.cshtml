@@ -5,38 +5,37 @@
     ViewData["Title"] = "Se connecter";
 }
 
-<div class="flex-row d-flex justify-content-center">
-    <h1>@ViewData["Title"]</h1>
-</div>
-<div class="flex-row d-flex justify-content-center">
-    <form id="account" method="post" class="w-50">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-floating">
-            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-            <label asp-for="Input.Email" class="form-label"></label>
-            <span asp-validation-for="Input.Email" class="text-danger"></span>
-        </div>
-        <div class="form-floating">
-            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
-            <label asp-for="Input.Password" class="form-label"></label>
-            <span asp-validation-for="Input.Password" class="text-danger"></span>
-        </div>
-        <div>
-            <div class="checkbox">
-                <label asp-for="Input.RememberMe" class="form-label">
-                    <input class="form-check-input" asp-for="Input.RememberMe" />
-                    @Html.DisplayNameFor(m => m.Input.RememberMe)
-                </label>
+<div class="flex flex-col">
+    <div class="items-start justify-between hidden m-4 md:flex">
+        <img src="/img/logo.png" alt="Logo" class="w-24">
+        <a asp-page="./Register"asp-route-returnUrl="@Model.ReturnUrl" class="py-2 px-2.5 border border-gray-300 rounded-md text-sm">Créer un compte</a>
+    </div>
+    <div class="flex justify-center flex-1">
+        <div class="flex items-center justify-center flex-1 p-8 md:p-0">
+            <div class="flex-1 max-w-sm p-8 space-y-4 border rounded-xl">
+                <h1 class="text-2xl font-bold text-center">@ViewData["Title"]</h1>
+                <form id="account" method="post" class="flex flex-col space-y-2">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="input" autocomplete="username" aria-required="true" />
+                    <span asp-validation-for="Input.Email" class="text-red-400"></span>
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="input" autocomplete="current-password" aria-required="true" />
+                    <span asp-validation-for="Input.Password" class="text-red-400"></span>
+                    <label asp-for="Input.RememberMe">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                    <div class="flex flex-col pt-2 space-y-3">
+                        <button
+                            class="px-4 py-2 text-white transition-colors bg-green-500 border-green-600 rounded-md hover:bg-green-400">Se
+                            connecter</button>
+                        <div asp-validation-summary="ModelOnly" class="text-red-400"></div>
+                        <a asp-page="./Register"asp-route-returnUrl="@Model.ReturnUrl">Créer un compte</a>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="flex-row d-flex justify-content-center">
-            <button id="login-submit" type="submit" class="mt-2 w-50 btn btn-lg btn-primary">Connexion</button>
-        </div>
-        <div class="flex-row d-flex justify-content-center">
-            <a class="m-3 btn btn-sm btn-secondary col-5" asp-page="./Register"
-                asp-route-returnUrl="@Model.ReturnUrl">Inscription</a>
-        </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

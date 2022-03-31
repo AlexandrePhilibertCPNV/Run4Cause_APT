@@ -129,7 +129,7 @@ namespace Run4Cause.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Connexion refus�e");
+                    ModelState.AddModelError(string.Empty, "Connexion refusée");
                     return Page();
                 }
             }
