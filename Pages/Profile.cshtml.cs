@@ -33,6 +33,8 @@ namespace Run4Cause.Pages
                 return NotFound();
             }
 
+            User = user;
+
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -43,8 +45,6 @@ namespace Run4Cause.Pages
             user.Profile.Description = Input.Description;
 
             await _context.SaveChangesAsync();
-
-            User = user;
 
             return Page();
         }
