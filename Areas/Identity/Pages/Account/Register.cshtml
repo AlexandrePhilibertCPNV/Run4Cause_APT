@@ -4,50 +4,47 @@
     ViewData["Title"] = "S'inscrire";
 }
 
-<div class="flex-row d-flex justify-content-center">
-    <h1>@ViewData["Title"]</h1>
-</div>
-
-<div class="flex-row d-flex justify-content-center">
-    <div class="w-50">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating">
-                <input asp-for="Input.FirstName" class="form-control" autocomplete="firstname" aria-required="true" />
-                <label asp-for="Input.FirstName"></label>
-                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+<div class="flex flex-col">
+    <div class="items-start justify-between hidden m-4 md:flex">
+        <img src="/img/logo.png" alt="Logo" class="w-24">
+        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl"
+            class="py-2 px-2.5 border border-gray-300 rounded-md text-sm">Créer un compte</a>
+    </div>
+    <div class="flex justify-center flex-1">
+        <div class="flex items-center justify-center flex-1 p-8 md:p-0">
+            <div class="flex-1 max-w-sm p-8 space-y-4 border rounded-xl">
+                <h1 class="text-2xl font-bold text-center">@ViewData["Title"]</h1>
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post"
+                    class="flex flex-col pt-0 space-y-2">
+                    <label asp-for="Input.FirstName"></label>
+                    <input asp-for="Input.FirstName" class="input" autocomplete="firstname" aria-required="true" />
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    <label asp-for="Input.LastName"></label>
+                    <input asp-for="Input.LastName" class="input" autocomplete="lastname" aria-required="true" />
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="input" autocomplete="username" aria-required="true" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    <label asp-for="Input.PhoneNumber"></label>
+                    <input asp-for="Input.PhoneNumber" class="input" autocomplete="username" aria-required="true" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="input" autocomplete="new-password" aria-required="true" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="input" autocomplete="new-password"
+                        aria-required="true" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    <div class="flex flex-col pt-2 space-y-3">
+                        <button
+                            class="px-4 py-2 text-white transition-colors bg-green-500 border-green-600 rounded-md hover:bg-green-400">
+                            Créer un compte</button>
+                        <div asp-validation-summary="ModelOnly" class="text-red-400"></div>
+                        <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Se connecter</a>
+                    </div>
+                </form>
             </div>
-            <div class="form-floating">
-                <input asp-for="Input.LastName" class="form-control" autocomplete="lastname" aria-required="true" />
-                <label asp-for="Input.LastName"></label>
-                <span asp-validation-for="Input.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                <label asp-for="Input.Email"></label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="username" aria-required="true" />
-                <label asp-for="Input.PhoneNumber"></label>
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.Password"></label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password"
-                    aria-required="true" />
-                <label asp-for="Input.ConfirmPassword"></label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="flex-row d-flex justify-content-center">
-                <button id="registerSubmit" type="submit"
-                    class="mt-2 w-50 btn btn-lg btn-primary">Enregistrement</button>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
