@@ -1,15 +1,17 @@
 @model Run4Cause.Models.User
 
 <div x-data="{ open: false }">
-    <div class="fixed bottom-0 z-10 pb-4 -translate-x-1/2 left-1/2 md:hidden">
+    <div class="fixed bottom-0 z-10 pb-4 -translate-x-1/2 left-1/2">
         <button class="px-8 py-3 text-white bg-green-500 rounded-full" @@click="open = true">
             <span>Parrainer</span>
         </button>
     </div>
     <div class="z-10" x-show="open" x-cloak x-data="state()">
         <div class="fixed top-0 left-0 w-full h-full bg-black opacity-40" @@click="open = false"></div>
-        <div class="fixed w-full -translate-x-1/2 bottom-16 left-1/2">
-            <form class="relative flex flex-col px-8 py-6 m-8 space-y-2 bg-white rounded-lg" method="POST">
+        <div class="fixed left-0 w-full px-8 bottom-16">
+            <form
+                class="relative flex flex-col max-w-xl px-8 py-6 mb-8 space-y-2 -translate-x-1/2 bg-white rounded-lg left-1/2"
+                method="POST">
                 <h1 class="mb-4 text-2xl font-bold">Parrainer @Html.DisplayFor(model => model.FullName)</h1>
 
                 <label class="text-lg font-bold" for="AmountPerKm">Contribution au km</label>
